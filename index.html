@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Данила & Саша — Свадьба</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Marck+Script&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== БЛОК 1: ТИТУЛЬНАЯ СТРАНИЦА ===== -->
+  <section class="block block-1" id="hero">
+    <img src="images/dahlia-top.png" alt="" class="dahlia-top" aria-hidden="true">
+    <h1 class="hero-title animate-on-scroll">Данила <span class="ampersand">&</span> Саша</h1>
+    <div class="polaroids">
+      <div class="polaroid polaroid-left animate-polaroid" data-delay="0">
+        <div class="tape tape-left"></div>
+        <div class="photo-wrapper photo-zoom">
+          <img src="images/photo1.jpg" alt="Данила в детстве" class="photo">
+        </div>
+      </div>
+      <div class="polaroid polaroid-right animate-polaroid" data-delay="400">
+        <div class="tape tape-right"></div>
+        <div class="photo-wrapper">
+          <img src="images/photo2.jpg" alt="Саша в детстве" class="photo">
+        </div>
+      </div>
+    </div>
+    <p class="hero-subtitle animate-on-scroll">Тогда мы еще не знали,<br>что однажды встретимся</p>
+    <div class="scroll-arrow animate-on-scroll">
+      <svg width="20" height="56" viewBox="0 0 20 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="10" y1="0" x2="10" y2="44" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M3 38 L10 48 L17 38" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <div class="divider animate-on-scroll">✦ ✦ ✦</div>
+
+  <!-- ===== БЛОК 2: КАЛЕНДАРЬ ===== -->
+  <section class="block block-2" id="calendar">
+    <h2 class="section-heading animate-on-scroll">Октябрь 2026</h2>
+    <div class="calendar-container animate-on-scroll">
+      <div class="calendar-weekdays">
+        <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+      </div>
+      <div class="calendar-grid" id="calendarGrid"></div>
+      <div class="heart-badge" id="heartBadge">
+        <svg class="heart-svg" viewBox="-2 -2 58 54" id="heartSvg">
+          <path class="heart-path" d="M27,48 C22,44 -1,32 1,17 C2,7 10,1 19,3 C24,4 27,8 27,12 C27,8 30,4 35,3 C43,1 52,7 53,17 C55,32 32,44 27,48 Z"
+                fill="none" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider animate-on-scroll">✦ ✦ ✦</div>
+
+  <!-- ===== БЛОК 3: ДОРОГИЕ ГОСТИ ===== -->
+  <section class="block block-3" id="guests">
+    <h2 class="section-heading animate-on-scroll">Дорогие сердцу гости</h2>
+    <div class="text-content animate-on-scroll">
+      <p>Мы мечтали не о пышном торжестве, а о теплом вечере в кругу самых близких людей. Поэтому наша свадьба — это про уют, искренние разговоры, смех и моменты, которые хочется запомнить.</p>
+      <p>В этот день не будет бесконечных официальных церемоний и сложной развлекательной программы. Вместо этого — вкусная еда, любимая музыка, танцы, теплые объятия и время, проведенное вместе.</p>
+      <p>Конечно, совсем без развлечений не обойдется! Мы подготовили несколько небольших интерактивов, чтобы добавить вечеру улыбок и приятных воспоминаний, но самое главное для нас — чтобы каждый чувствовал себя легко, свободно и просто наслаждался праздником.</p>
+      <p>Спасибо, что разделите этот день вместе с нами. Именно вы сделаете его по-настоящему особенным.</p>
+    </div>
+  </section>
+
+  <div class="divider animate-on-scroll">✦ ✦ ✦</div>
+
+  <!-- ===== БЛОК 4: МЕСТО ВСТРЕЧИ ===== -->
+  <section class="block block-4" id="venue">
+    <h2 class="section-heading animate-on-scroll">Место нашей встречи</h2>
+    <div class="venue-content animate-on-scroll">
+      <p class="venue-address">г. Санкт-Петербург, ул. Фурштатская, 52<br>Дворец бракосочетания №2</p>
+      <div class="map-wrapper">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?text=Санкт-Петербург, ул. Фурштатская, 52&z=17&lang=ru_RU"
+          width="100%"
+          height="400"
+          frameborder="0"
+          allowfullscreen="true"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider animate-on-scroll">✦ ✦ ✦</div>
+
+  <!-- ===== БЛОК 5: ТАЙМЛАЙН ===== -->
+  <section class="block block-5" id="timeline">
+    <h2 class="section-heading animate-on-scroll">Как пройдет этот день</h2>
+    <div class="timeline animate-on-scroll">
+      <div class="timeline-line"></div>
+      <div class="timeline-stop">
+        <div class="timeline-dot"></div>
+        <div class="timeline-info">
+          <span class="timeline-time">16:30</span>
+          <span class="timeline-event">Сбор гостей</span>
+        </div>
+      </div>
+      <div class="timeline-stop">
+        <div class="timeline-dot"></div>
+        <div class="timeline-info">
+          <span class="timeline-time">17:00</span>
+          <span class="timeline-event">Торжественная церемония</span>
+        </div>
+      </div>
+      <div class="timeline-stop">
+        <div class="timeline-dot"></div>
+        <div class="timeline-info">
+          <span class="timeline-time">17:30</span>
+          <span class="timeline-event">Небольшая фотосессия</span>
+        </div>
+      </div>
+      <div class="timeline-stop">
+        <div class="timeline-dot"></div>
+        <div class="timeline-info">
+          <span class="timeline-time">18:30</span>
+          <span class="timeline-event">Праздничный ужин</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider animate-on-scroll">✦ ✦ ✦</div>
+
+  <!-- ===== БЛОК 6: ПОДАРКИ ===== -->
+  <section class="block block-6" id="gifts">
+    <h2 class="section-heading animate-on-scroll">Пару слов о подарках</h2>
+    <div class="text-content animate-on-scroll">
+      <p>Мы мечтаем отправиться в свадебное путешествие, поэтому самым желанным подарком станет вклад в нашу копилку приключений. Обещаем потратить его с умом: на новые места, яркие эмоции и, возможно, один необоснованно дорогой коктейль с видом на море.</p>
+    </div>
+  </section>
+
+  <div class="divider animate-on-scroll">✦ ✦ ✦</div>
+
+  <!-- ===== БЛОК 7: RSVP ===== -->
+  <section class="block block-7" id="rsvp">
+    <h2 class="section-heading animate-on-scroll">Разделите этот день вместе с нами</h2>
+    <p class="rsvp-note animate-on-scroll">Пожалуйста, сообщите, сможете ли вы присутствовать на нашем празднике до 9 сентября 2026 года. Если ваши планы изменятся или у вас появятся любые вопросы, просто пишите нам в личные сообщения — мы всегда на связи.</p>
+    <form class="rsvp-form animate-on-scroll" id="rsvpForm" novalidate>
+      <div class="form-group">
+        <label for="guestName">Как к вам обращаться?</label>
+        <input type="text" id="guestName" name="name" placeholder="Ваше имя">
+      </div>
+      <div class="form-group">
+        <label>Вы сможете прийти?</label>
+        <div class="radio-group" data-field="attending">
+          <label class="radio-label">
+            <input type="radio" name="attending" value="Приду">
+            <span class="radio-custom"></span>
+            Приду
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="attending" value="Не смогу">
+            <span class="radio-custom"></span>
+            Не смогу
+          </label>
+        </div>
+      </div>
+      <div class="form-group drink-group" id="drinkGroup">
+        <label>Что вы предпочитаете? <span class="label-hint">(можно выбрать несколько)</span></label>
+        <div class="radio-group" data-field="drink">
+          <label class="radio-label">
+            <input type="checkbox" name="drink" value="Шампанское">
+            <span class="radio-custom"></span>
+            Шампанское
+          </label>
+          <label class="radio-label">
+            <input type="checkbox" name="drink" value="Вино белое">
+            <span class="radio-custom"></span>
+            Вино белое
+          </label>
+          <label class="radio-label">
+            <input type="checkbox" name="drink" value="Вино красное">
+            <span class="radio-custom"></span>
+            Вино красное
+          </label>
+          <label class="radio-label">
+            <input type="checkbox" name="drink" value="Ликер (Minttu/Jägermeister)">
+            <span class="radio-custom"></span>
+            Ликер (Minttu/Jägermeister)
+          </label>
+          <label class="radio-label">
+            <input type="checkbox" name="drink" value="Не пью алкоголь">
+            <span class="radio-custom"></span>
+            Не пью алкоголь
+          </label>
+        </div>
+      </div>
+      <div class="form-group wishes-group" id="wishesGroup">
+        <label for="wishes">Пожелания</label>
+        <textarea id="wishes" name="wishes" placeholder="Наличие пищевых аллергий и др." rows="3"></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Отправить</button>
+      <div class="form-message" id="formMessage"></div>
+    </form>
+  </section>
+
+  <div class="divider animate-on-scroll">✦ ✦ ✦</div>
+
+  <!-- ===== БЛОК 8: ТАЙМЕР ===== -->
+  <section class="block block-8" id="countdown">
+    <div class="countdown-text animate-on-scroll">
+      <p class="countdown-print">Осталось совсем чуть-чуть до дня, когда мы официально перестанем отвечать на вопрос:</p>
+      <p class="countdown-highlight">&laquo;Ну когда уже свадьба?&raquo;</p>
+    </div>
+    <div class="countdown-timer animate-on-scroll" id="countdownTimer">
+      <div class="timer-unit">
+        <span class="timer-number" id="timerDays">00</span>
+        <span class="timer-label">дней</span>
+      </div>
+      <div class="timer-separator">:</div>
+      <div class="timer-unit">
+        <span class="timer-number" id="timerHours">00</span>
+        <span class="timer-label">часов</span>
+      </div>
+      <div class="timer-separator">:</div>
+      <div class="timer-unit">
+        <span class="timer-number" id="timerMinutes">00</span>
+        <span class="timer-label">минут</span>
+      </div>
+      <div class="timer-separator">:</div>
+      <div class="timer-unit">
+        <span class="timer-number" id="timerSeconds">00</span>
+        <span class="timer-label">секунд</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider animate-on-scroll">✦ ✦ ✦</div>
+
+  <!-- ===== БЛОК 9: ФИНАЛ ===== -->
+  <section class="block block-9" id="finale">
+    <div class="finale-content animate-on-scroll">
+      <h2 class="finale-title" id="finaleTitle">
+        <span class="finale-line"><span class="word">Добро</span> <span class="word">пожаловать</span></span>
+        <span class="finale-line"><span class="word">на</span> <span class="word">нашу</span> <span class="word">свадьбу!</span></span>
+        <span class="finale-heart">&#x2764;</span>
+      </h2>
+    </div>
+    <img src="images/dahlia-bottom.png" alt="" class="dahlia-bottom" aria-hidden="true">
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

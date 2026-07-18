@@ -1,0 +1,1072 @@
+/* ========================================
+   WEDDING SITE — STYLES
+   ======================================== */
+
+:root {
+  --color-bg: #FBF6F0;
+  --color-bg-warm: #F5EDE4;
+  --color-primary: #6B2D3E;
+  --color-primary-light: #8B4558;
+  --color-accent: #C9A96E;
+  --color-accent-light: #D4BC8E;
+  --color-text: #4A3040;
+  --color-text-light: #7A6575;
+  --color-white: #FFFFFF;
+  --color-tape: rgba(255, 252, 240, 0.55);
+  --color-shadow: rgba(107, 45, 62, 0.1);
+  --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
+  --font-handwriting: 'Marck Script', cursive;
+  --max-width: 760px;
+  --section-padding: 80px 24px;
+}
+
+/* ===== RESET & BASE ===== */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Paper texture overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10000;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+  background-size: 250px 250px;
+  mix-blend-mode: multiply;
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+.section-heading {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 2.4rem;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 0.02em;
+}
+
+.text-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text-content p {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: var(--color-text);
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.text-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== BLOCKS ===== */
+
+.block {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+.block:nth-child(odd) {
+  background-color: var(--color-bg);
+}
+
+.block:nth-child(even) {
+  background-color: var(--color-bg-warm);
+}
+
+/* ===== DIVIDERS — burgundy ===== */
+
+.divider {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 1rem;
+  color: var(--color-primary);
+  letter-spacing: 1em;
+  background-color: var(--color-bg);
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+   BLOCK 1: HERO
+   ======================================== */
+
+.block-1 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 140px;
+  padding-bottom: 60px;
+  overflow: hidden;
+}
+
+/* Torn paper edge at the bottom of block 1 */
+.block-1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -2px;
+  right: -2px;
+  height: 22px;
+  background: var(--color-bg);
+  clip-path: polygon(
+    0% 50%, 1% 30%, 3% 60%, 5% 20%, 7% 55%, 9% 35%,
+    11% 65%, 13% 15%, 15% 50%, 17% 25%, 19% 60%, 21% 10%,
+    23% 45%, 25% 30%, 27% 65%, 29% 18%, 31% 55%, 33% 35%,
+    35% 70%, 37% 12%, 39% 48%, 41% 28%, 43% 62%, 45% 15%,
+    47% 50%, 49% 32%, 51% 68%, 53% 20%, 55% 52%, 57% 30%,
+    59% 65%, 61% 10%, 63% 45%, 65% 35%, 67% 60%, 69% 18%,
+    71% 55%, 73% 28%, 75% 62%, 77% 12%, 79% 48%, 81% 32%,
+    83% 65%, 85% 15%, 87% 50%, 89% 25%, 91% 60%, 93% 35%,
+    95% 55%, 97% 18%, 99% 45%, 100% 30%,
+    100% 100%, 0% 100%
+  );
+  filter: drop-shadow(0 -1px 2px rgba(107, 45, 62, 0.04));
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 4rem;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 50px;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+.hero-title .ampersand {
+  font-style: italic;
+  color: var(--color-accent);
+  font-weight: 300;
+  padding: 0 0.15em;
+}
+
+/* Polaroids */
+
+.polaroids {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.polaroid {
+  position: relative;
+  background: var(--color-white);
+  padding: 12px 12px 45px 12px;
+  box-shadow: 0 4px 20px var(--color-shadow), 0 1px 4px rgba(0,0,0,0.05);
+  width: 270px;
+  cursor: default;
+}
+
+.polaroid-left {
+  transform: rotate(-4deg) translateY(10px);
+}
+
+.polaroid-right {
+  transform: rotate(3deg) translateY(-15px);
+}
+
+.photo-wrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--color-bg-warm);
+  position: relative;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-zoom .photo {
+  transform: scale(1.6);
+  object-position: 35% 30%;
+}
+
+/* Tape effect */
+
+.tape {
+  position: absolute;
+  width: 65px;
+  height: 22px;
+  background: var(--color-tape);
+  backdrop-filter: blur(1px);
+  z-index: 2;
+  border: 1px solid rgba(255, 250, 230, 0.3);
+}
+
+.tape-left {
+  top: -8px;
+  left: 20px;
+  transform: rotate(-15deg);
+  background: linear-gradient(135deg, rgba(255,252,240,0.5) 0%, rgba(240,235,220,0.45) 100%);
+}
+
+.tape-right {
+  top: -10px;
+  right: 25px;
+  transform: rotate(10deg);
+  background: linear-gradient(135deg, rgba(240,235,220,0.45) 0%, rgba(255,252,240,0.5) 100%);
+}
+
+/* Polaroid development animation */
+
+.animate-polaroid .photo-wrapper {
+  position: relative;
+}
+
+.animate-polaroid .photo-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 252, 245, 0.85) 30%,
+    rgba(245, 237, 228, 0.7) 60%,
+    transparent 100%
+  );
+  transition: opacity 2s ease, backdrop-filter 2s ease;
+  opacity: 1;
+  backdrop-filter: blur(8px) brightness(1.3);
+  pointer-events: none;
+}
+
+.animate-polaroid.developed .photo-wrapper::after {
+  opacity: 0;
+  backdrop-filter: none;
+}
+
+.animate-polaroid .photo {
+  transition: filter 2.5s ease, opacity 2.5s ease;
+  filter: sepia(0.6) brightness(1.2) contrast(0.8);
+  opacity: 0.3;
+}
+
+.animate-polaroid.developed .photo {
+  filter: sepia(0.15) brightness(1.0) contrast(1.0);
+  opacity: 1;
+}
+
+/* Hero subtitle — handwriting */
+
+.hero-subtitle {
+  font-family: var(--font-handwriting);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  text-align: center;
+  line-height: 1.5;
+  margin-top: 35px;
+}
+
+/* Scroll arrow */
+
+.scroll-arrow {
+  margin-top: 60px;
+  color: var(--color-accent);
+  animation: scrollBounce 2.2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(10px); opacity: 1; }
+}
+
+/* ========================================
+   BLOCK 2: CALENDAR
+   ======================================== */
+
+.calendar-container {
+  max-width: 420px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.calendar-weekdays span {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--color-text);
+  border-radius: 50%;
+  position: relative;
+  cursor: default;
+}
+
+.calendar-day.empty {
+  cursor: default;
+}
+
+.calendar-day.wedding-day {
+  color: var(--color-primary);
+  font-weight: 600;
+  z-index: 1;
+}
+
+.calendar-day.past {
+  color: var(--color-text-light);
+}
+
+/* Heart badge for the wedding day */
+
+.heart-badge {
+  position: absolute;
+  width: 56px;
+  height: 52px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.heart-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.heart-path {
+  stroke-dasharray: 180;
+  stroke-dashoffset: 180;
+}
+
+.heart-badge.drawn .heart-path {
+  animation: drawHeartLoop 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes drawHeartLoop {
+  0%, 5% { stroke-dashoffset: 180; }
+  40%, 55% { stroke-dashoffset: 0; }
+  95%, 100% { stroke-dashoffset: 180; }
+}
+
+/* ========================================
+   BLOCK 3: GUESTS TEXT
+   ======================================== */
+
+.block-3 {
+  background-color: var(--color-bg-warm);
+}
+
+/* ========================================
+   BLOCK 4: VENUE / MAP
+   ======================================== */
+
+.venue-content {
+  text-align: center;
+}
+
+.venue-address {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--color-primary);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.map-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--color-shadow);
+}
+
+.map-wrapper iframe {
+  display: block;
+  border: none;
+  width: 100%;
+  min-height: 350px;
+}
+
+/* ========================================
+   BLOCK 5: TIMELINE — route style
+   ======================================== */
+
+.timeline {
+  max-width: 420px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 48px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50px;
+  top: 1px;
+  bottom: 2px;
+  width: 1.5px;
+  background: linear-gradient(to bottom, var(--color-accent-light), var(--color-primary));
+}
+
+.timeline-stop {
+  position: relative;
+  padding-left: 30px;
+  padding-bottom: 38px;
+}
+
+.timeline-stop:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -5px;
+  top: 12px;
+  width: 7px;
+  height: 7px;
+  z-index: 2;
+}
+.timeline-dot::before,
+.timeline-dot::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 7px;
+  height: 11px;
+  border-radius: 7px 7px 0 0;
+  background: var(--color-primary);
+}
+.timeline-dot::before {
+  left: 7px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+.timeline-dot::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.timeline-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 0;
+}
+
+.timeline-time {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.timeline-event {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+/* ========================================
+   BLOCK 6: GIFTS
+   ======================================== */
+
+.block-6 {
+  background-color: var(--color-bg-warm);
+}
+
+/* ========================================
+   BLOCK 7: RSVP FORM
+   ======================================== */
+
+.rsvp-note {
+  max-width: 480px;
+  margin: 0 auto 32px;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+.label-hint {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  font-weight: 300;
+}
+
+.rsvp-form {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 28px;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--color-text);
+  background: var(--color-white);
+  border: 1.5px solid rgba(107, 45, 62, 0.15);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.15);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-text-light);
+  opacity: 0.6;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Drink group — hidden until attending */
+
+.drink-group {
+  display: none;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.drink-group.visible {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Wishes group — hidden until attending */
+
+.wishes-group {
+  display: none;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.wishes-group.visible {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Radio buttons */
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 12px 18px;
+  background: var(--color-white);
+  border: 1.5px solid rgba(107, 45, 62, 0.12);
+  border-radius: 8px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.radio-label:hover {
+  border-color: var(--color-accent-light);
+}
+
+.radio-label input[type="radio"],
+.radio-label input[type="checkbox"] {
+  display: none;
+}
+
+.radio-custom {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent-light);
+  position: relative;
+  flex-shrink: 0;
+  transition: border-color 0.3s ease;
+}
+
+.radio-label input[type="radio"]:checked ~ .radio-custom,
+.radio-label input[type="checkbox"]:checked ~ .radio-custom {
+  border-color: var(--color-primary);
+}
+
+.radio-label input[type="radio"]:checked ~ .radio-custom::after,
+.radio-label input[type="checkbox"]:checked ~ .radio-custom {
+  border-color: var(--color-primary);
+  border-radius: 4px;
+}
+
+.radio-label input[type="checkbox"]:checked ~ .radio-custom::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 2px;
+  background: var(--color-primary);
+}
+
+.radio-label:has(input:checked) {
+  border-color: var(--color-primary);
+  background: rgba(107, 45, 62, 0.03);
+}
+
+/* Submit button */
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 16px 32px;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  letter-spacing: 0.03em;
+}
+
+.submit-btn:hover {
+  background: var(--color-primary-light);
+  box-shadow: 0 4px 16px rgba(107, 45, 62, 0.25);
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Form message */
+
+.form-message {
+  margin-top: 20px;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  min-height: 24px;
+  transition: opacity 0.3s ease;
+  line-height: 1.5;
+}
+
+.form-message.success {
+  color: #4a7c59;
+}
+
+.form-message.error {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+/* ========================================
+   BLOCK 8: COUNTDOWN
+   ======================================== */
+
+.block-8 {
+  background-color: var(--color-bg-warm);
+}
+
+.countdown-text {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.countdown-print {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.countdown-highlight {
+  font-family: var(--font-handwriting);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.4;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.timer-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.timer-number {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--color-primary);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.timer-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-light);
+  text-transform: lowercase;
+  margin-top: 6px;
+  letter-spacing: 0.05em;
+}
+
+.timer-separator {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--color-accent);
+  line-height: 1;
+  padding-bottom: 20px;
+}
+
+/* ========================================
+   BLOCK 9: FINALE
+   ======================================== */
+
+.block-9 {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--color-bg) 0%,
+    var(--color-bg-warm) 50%,
+    var(--color-bg) 100%
+  );
+}
+
+/* Torn paper edge at the top of block 9 */
+.block-9::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2px;
+  right: -2px;
+  height: 22px;
+  background: var(--color-bg-warm);
+  clip-path: polygon(
+    0% 50%, 1% 70%, 3% 40%, 5% 80%, 7% 45%, 9% 65%,
+    11% 35%, 13% 85%, 15% 50%, 17% 75%, 19% 40%, 21% 90%,
+    23% 55%, 25% 70%, 27% 35%, 29% 82%, 31% 45%, 33% 65%,
+    35% 30%, 37% 88%, 39% 52%, 41% 72%, 43% 38%, 45% 85%,
+    47% 50%, 49% 68%, 51% 32%, 53% 80%, 55% 48%, 57% 70%,
+    59% 35%, 61% 90%, 63% 55%, 65% 65%, 67% 40%, 69% 82%,
+    71% 45%, 73% 72%, 75% 38%, 77% 88%, 79% 52%, 81% 68%,
+    83% 35%, 85% 85%, 87% 50%, 89% 75%, 91% 40%, 93% 65%,
+    95% 45%, 97% 82%, 99% 55%, 100% 70%,
+    100% 0%, 0% 0%
+  );
+  filter: drop-shadow(0 1px 2px rgba(107, 45, 62, 0.04));
+}
+
+.finale-content {
+  text-align: center;
+  padding: 40px 24px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.finale-title {
+  font-family: var(--font-handwriting);
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+.finale-title .word {
+  display: inline-block;
+  margin: 0 0.1em;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.finale-title.animate .word {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.finale-line {
+  display: block;
+}
+
+.finale-heart {
+  display: block;
+  font-size: 2.2rem;
+  color: var(--color-primary);
+  margin-top: 20px;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.finale-title.animate .finale-heart {
+  opacity: 1;
+}
+
+/* ========================================
+   DAHLIA IMAGES
+   ======================================== */
+
+.dahlia-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55vw;
+  max-width: 380px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dahlia-bottom {
+  display: block;
+  width: 55vw;
+  max-width: 380px;
+  margin-top: auto;
+  margin-bottom: 20px;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .dahlia-top {
+    width: 70vw;
+    max-width: none;
+  }
+  .dahlia-bottom {
+    width: 70vw;
+    max-width: none;
+  }
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 640px) {
+  :root {
+    --section-padding: 60px 18px;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .section-heading {
+    font-size: 1.9rem;
+    margin-bottom: 30px;
+  }
+
+  .polaroids {
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+
+  .polaroid {
+    width: 165px;
+    padding: 8px 8px 32px 8px;
+  }
+
+  .polaroid-left {
+    transform: rotate(-3deg) translateY(5px);
+  }
+
+  .polaroid-right {
+    transform: rotate(2deg) translateY(-8px);
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .text-content p {
+    font-size: 1.05rem;
+  }
+
+  .timeline {
+    padding-left: 42px;
+  }
+
+  .timeline-line {
+    left: 44px;
+  }
+
+  .timeline-info {
+    padding-left: 24px;
+  }
+
+  .timeline-stop {
+    padding-left: 24px;
+  }
+
+  .timer-number {
+    font-size: 2.5rem;
+  }
+
+  .timer-separator {
+    font-size: 2rem;
+  }
+
+  .timer-unit {
+    min-width: 60px;
+  }
+
+  .countdown-highlight {
+    font-size: 1.4rem;
+  }
+
+  .finale-title {
+    font-size: 2.3rem;
+  }
+
+  .heart-badge {
+    width: 46px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .polaroid {
+    width: 150px;
+  }
+
+  .timer-number {
+    font-size: 2rem;
+  }
+
+  .countdown-timer {
+    gap: 6px;
+  }
+
+  .finale-title {
+    font-size: 1.9rem;
+  }
+}
